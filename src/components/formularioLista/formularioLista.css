@@ -1,0 +1,14 @@
+.lista {
+  width: 60vw;
+
+}
+
+.formularioLista {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.formularioLista input[type="text"] {
+	width: 50%;
+}

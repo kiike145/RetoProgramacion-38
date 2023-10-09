@@ -1,0 +1,13 @@
+.reto {
+  display: flex;
+  flex-direction: row;
+}
+
+.formObjetivo {
+  width: 40vw;
+}
+
+td {
+  display: inline-block;
+  margin-right: 10px;
+}
