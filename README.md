@@ -1,27 +1,10 @@
-# React + TypeScript + Vite
+# RetoProgramacion-38
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Crea una función que encuentre todas las combinaciones de los números de una lista que suman el valor objetivo.
+- La función recibirá una lista de números enteros positivos y un valor objetivo.
+- Para obtener las combinaciones sólo se puede usar una vez cada elemento de la lista (pero pueden existir elementos repetidos en ella).
+- Ejemplo: 
+  	Lista = [1, 5, 3, 2],  Objetivo = 6
+  	Soluciones: [1, 5] y [1, 3, 2] (ambas combinaciones suman 6)  (Si no existen combinaciones, retornar una lista vacía)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ https://github.com/mouredev/retos-programacion-2023/blob/main/Retos/Reto%20%2338%20-%20LAS%20SUMAS%20%5BMedia%5D/ejercicio.md
