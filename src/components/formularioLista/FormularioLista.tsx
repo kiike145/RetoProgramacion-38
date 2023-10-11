@@ -5,12 +5,12 @@ import './formularioLista.css'
 
 const FormularioLista = () => {
 
-  const [list , setlist] = useState<string>('')
-  const [isCorrectList, setIsCorrectList] = useState(true)
-  const [showList, setShowList] = useState(false)
+  const [list , setlist] = useState<string>(sessionStorage.getItem("listado") || '')
+  const [isCorrectList, setIsCorrectList] = useState<boolean>(true)
+  const [showList, setShowList] = useState<boolean>(false)
+  const [listReady, setListReady] = useState<boolean>(false)
 
   const onInputChange = (event : React.ChangeEvent<HTMLInputElement>) => {
-
     setlist(event.target.value)
     isValidChar(event.target.value) 
       ? setIsCorrectList(true) 
@@ -18,17 +18,21 @@ const FormularioLista = () => {
   }
 
   const onHandleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+
     event.preventDefault();
 
     isValidList(list.split(",")) 
       ? (
           setIsCorrectList(true),
-          setShowList(true)
+          setShowList(true),
+          setListReady(true),
+          sessionStorage.setItem("listado" , list)
         ) 
       : (
         setIsCorrectList(false),
         setShowList(false)
       )
+
   }
 
   return (
@@ -42,14 +46,15 @@ const FormularioLista = () => {
           value={list}
           placeholder='Introduce los numeros separados por comas (Ej. 1,2,3)'
           onChange={onInputChange} 
+          disabled={listReady}
         />
         <input
           type='submit'
-          value='Comprobar Lista'
+          value='Añadir Lista'
           disabled={list==="" || !isCorrectList}
         />
       </form>
-      {isCorrectList ? (<p/>) : (<p>Error en la lista, compruebe los valores</p>)}
+      {isCorrectList ? (<p/>) : (<p className='msgeError'>Error en la lista, compruebe los valores</p>)}
       {showList && <ListadoListas listado={list.split(',')} />}
     </div>
   )
