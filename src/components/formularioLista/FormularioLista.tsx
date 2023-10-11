@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import ListadoListas from "../listadoListas/ListadoListas"
 import { isValidChar, isValidList } from '../utils.ts'
-import './formularioLista.css'
 
 const FormularioLista = () => {
 
-  const [list , setlist] = useState<string>(sessionStorage.getItem("listado") || '')
+  const [list , setlist] = useState<string>(localStorage.getItem("listado") || '')
   const [isCorrectList, setIsCorrectList] = useState<boolean>(true)
   const [showList, setShowList] = useState<boolean>(false)
   const [listReady, setListReady] = useState<boolean>(false)
@@ -26,7 +25,7 @@ const FormularioLista = () => {
           setIsCorrectList(true),
           setShowList(true),
           setListReady(true),
-          sessionStorage.setItem("listado" , list)
+          localStorage.setItem("listado" , list)
         ) 
       : (
         setIsCorrectList(false),

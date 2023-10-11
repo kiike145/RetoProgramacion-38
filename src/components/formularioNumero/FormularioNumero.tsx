@@ -5,7 +5,7 @@ const FormularioNumero = () => {
 
   const [isCorrectOption, setIsCorrectOption] = useState<boolean>(false)
   const [isOptionReady, setIsOptionReady] = useState<boolean>(false)
-  const [option, setOption] = useState<string>(sessionStorage.getItem("resultado") || '')
+  const [option, setOption] = useState<string>(localStorage.getItem("resultado") || '')
 
   const onInputChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     setOption(event.target.value)
@@ -14,7 +14,7 @@ const FormularioNumero = () => {
 
   const onHandleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    sessionStorage.setItem("resultado" , option)
+    localStorage.setItem("resultado" , option)
     setIsOptionReady(true)
   }
 

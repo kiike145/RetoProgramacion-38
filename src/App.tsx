@@ -6,8 +6,8 @@ import ListadoResultados from './components/listadoResultados/ListadoResultados'
 import { useEffect, useState } from 'react';
 
 const App = () => {
-  const [listado, setListado] = useState(sessionStorage.getItem("listado") || '');
-  const [resultado, setResultado] = useState(sessionStorage.getItem("resultado") || '');
+  const [listado, setListado] = useState(localStorage.getItem("listado") || '');
+  const [resultado, setResultado] = useState(localStorage.getItem("resultado") || '');
   const [mostrarResultados, setMostrarResultados] = useState<boolean>()
 
   useEffect(() => {
@@ -15,8 +15,8 @@ const App = () => {
   }, [listado , resultado]);
 
   const onHandleClick = () => {
-    setListado(sessionStorage.getItem("listado") || '');
-    setResultado(sessionStorage.getItem("resultado") || '')
+    setListado(localStorage.getItem("listado") || '');
+    setResultado(localStorage.getItem("resultado") || '')
   }
 
   return (

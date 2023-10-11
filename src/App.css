@@ -1,5 +1,6 @@
-* {
+body {
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
 }
 
 .reto {
@@ -12,17 +13,32 @@
   flex-direction: row;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+}
+
 .formObjetivo {
   width: 40vw;
 }
-
-.formObjetivo input[type="text"] {
-  width: 40%;
+.lista {
+  width: 60vw;
 }
 
-td {
-  display: inline-block;
-  margin-right: 10px;
+.lista,
+.formObjetivo {
+  margin: 1%;
+}
+
+
+input[type="text"],
+input[type="submit"] {
+  margin: 0 3rem;
+}
+
+button {
+  align-self: center;
+  width: fit-content;
 }
 
 .msgeError{
@@ -32,4 +48,3 @@ td {
   color: red;
   font-weight: bold;
 }
-
